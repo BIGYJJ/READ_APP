@@ -13,6 +13,7 @@ D:/read_app/notepad.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtCore/q20memory.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtCore/q20type_traits.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtCore/q23utility.h
+ mdp:C:/Qt/6.7.3/msvc2022_64/include/QtCore/qabstractitemmodel.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtCore/qalgorithms.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtCore/qanystringview.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtCore/qarraydata.h
@@ -94,6 +95,7 @@ D:/read_app/notepad.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtCore/qprocessordetection.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtCore/qrect.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtCore/qrefcount.h
+ mdp:C:/Qt/6.7.3/msvc2022_64/include/QtCore/qregularexpression.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtCore/qscopedpointer.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtCore/qscopeguard.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtCore/qset.h
@@ -158,6 +160,7 @@ D:/read_app/notepad.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtGui/qevent.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtGui/qeventpoint.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtGui/qfont.h
+ mdp:C:/Qt/6.7.3/msvc2022_64/include/QtGui/qfontdatabase.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtGui/qfontinfo.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtGui/qfontmetrics.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtGui/qguiapplication.h
@@ -188,13 +191,16 @@ D:/read_app/notepad.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtGui/qtguiexports.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtGui/qtguiglobal.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtGui/qtransform.h
+ mdp:C:/Qt/6.7.3/msvc2022_64/include/QtGui/qvalidator.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtGui/qvector2d.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtGui/qvectornd.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtGui/qwindowdefs.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtGui/qwindowdefs_win.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/QApplication
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/QColorDialog
+ mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/QComboBox
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/QFileDialog
+ mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/QFontComboBox
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/QFontDialog
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/QLabel
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/QMainWindow
@@ -204,12 +210,17 @@ D:/read_app/notepad.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/QStatusBar
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/QTextEdit
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/QToolBar
+ mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qabstractitemdelegate.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qabstractscrollarea.h
+ mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qabstractslider.h
+ mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qabstractspinbox.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qapplication.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qcolordialog.h
+ mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qcombobox.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qdialog.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qdialogbuttonbox.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qfiledialog.h
+ mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qfontcombobox.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qfontdialog.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qframe.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qlabel.h
@@ -217,8 +228,13 @@ D:/read_app/notepad.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qmenu.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qmenubar.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qmessagebox.h
+ mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qrubberband.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qsizepolicy.h
+ mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qslider.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qstatusbar.h
+ mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qstyle.h
+ mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qstyleoption.h
+ mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qtabbar.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qtabwidget.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qtextedit.h
  mdp:C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qtoolbar.h

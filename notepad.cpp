@@ -9,8 +9,8 @@ NotePad::NotePad(QWidget *parent)
     setupStatusBar();
     createConnections();
     
-    //setCurrentFile("");
-    //setWindowIcon(QIcon(":/icons/notepad.png")); // 可选图标
+    setCurrentFile("");
+    setWindowIcon(QIcon(":/icons/notepad.png")); // 可选图标
 }
 
 void NotePad::setupUI()
@@ -118,17 +118,20 @@ void NotePad::setupMenuBar()
     aboutAction = new QAction("关于(&A)", this);
     aboutAction->setStatusTip("关于此应用程序");
     helpMenu->addAction(aboutAction);
+
+
+    
 }
 
 void NotePad::setupToolBar()
 {
-    // 文件工具栏
+    // 现有的文件工具栏
     fileToolBar = addToolBar("文件");
     fileToolBar->addAction(newAction);
     fileToolBar->addAction(openAction);
     fileToolBar->addAction(saveAction);
     
-    // 编辑工具栏
+    // 现有的编辑工具栏
     editToolBar = addToolBar("编辑");
     editToolBar->addAction(undoAction);
     editToolBar->addAction(redoAction);
@@ -136,6 +139,58 @@ void NotePad::setupToolBar()
     editToolBar->addAction(cutAction);
     editToolBar->addAction(copyAction);
     editToolBar->addAction(pasteAction);
+    
+    // 新增：格式工具栏
+    formatToolBar = addToolBar("格式");
+    
+    // 字体选择框
+    fontComboBox = new QFontComboBox();
+    fontComboBox->setToolTip("选择字体");
+    formatToolBar->addWidget(fontComboBox);
+    
+    // 字号选择框
+    fontSizeComboBox = new QComboBox();
+    fontSizeComboBox->setEditable(true);  // 允许手动输入
+    fontSizeComboBox->setToolTip("选择字号");
+    // 添加常用字号
+    QStringList sizes = {"8", "9", "10", "11", "12", "14", "16", "18", "20", "22", "24", "26", "28", "36", "48", "72"};
+    fontSizeComboBox->addItems(sizes);
+    fontSizeComboBox->setCurrentText("12");  // 默认12号字
+    formatToolBar->addWidget(fontSizeComboBox);
+    
+    formatToolBar->addSeparator();
+    
+    // 加粗按钮
+    boldAction = new QAction("B", this);
+    boldAction->setCheckable(true);  // 可以切换状态
+    boldAction->setToolTip("加粗");
+    boldAction->setFont(QFont("Arial", 10, QFont::Bold));
+    formatToolBar->addAction(boldAction);
+    
+    // 斜体按钮
+    italicAction = new QAction("I", this);
+    italicAction->setCheckable(true);
+    italicAction->setToolTip("斜体");
+    QFont italicFont("Arial", 10);
+    italicFont.setItalic(true);
+    italicAction->setFont(italicFont);
+    formatToolBar->addAction(italicAction);
+    
+    // 下划线按钮
+    underlineAction = new QAction("U", this);
+    underlineAction->setCheckable(true);
+    underlineAction->setToolTip("下划线");
+    QFont underlineFont("Arial", 10);
+    underlineFont.setUnderline(true);
+    underlineAction->setFont(underlineFont);
+    formatToolBar->addAction(underlineAction);
+    
+    formatToolBar->addSeparator();
+    
+    // 字体颜色按钮
+    textColorAction = new QAction("A", this);
+    textColorAction->setToolTip("字体颜色");
+    formatToolBar->addAction(textColorAction);
 }
 
 
@@ -183,6 +238,20 @@ void NotePad::createConnections()
             this, [this]() {
         pasteAction->setEnabled(!QApplication::clipboard()->text().isEmpty());
     });
+
+      // 新增：格式工具栏连接
+    connect(fontComboBox, &QFontComboBox::currentFontChanged, 
+            this, &NotePad::fontFamilyChanged);
+    connect(fontSizeComboBox, &QComboBox::currentTextChanged, 
+            this, &NotePad::fontSizeChanged);
+    connect(boldAction, &QAction::toggled, this, &NotePad::boldClicked);
+    connect(italicAction, &QAction::toggled, this, &NotePad::italicClicked);
+    connect(underlineAction, &QAction::toggled, this, &NotePad::underlineClicked);
+    connect(textColorAction, &QAction::triggered, this, &NotePad::textColorClicked);
+    
+    // 当光标移动时更新格式按钮状态
+    connect(textEdit, &QTextEdit::cursorPositionChanged, 
+            this, &NotePad::updateFormatButtons);
 }
 
 void NotePad::newFile()
@@ -319,7 +388,7 @@ void NotePad::about()
         "一个基于Qt6.8.2的简单文本编辑器\n"
         "支持基本的文本编辑和格式化功能\n\n"
         "构建工具: CMake\n"
-        "平台: Linux");
+        "平台: Windows");
 }
 
 void NotePad::documentModified()
@@ -360,7 +429,8 @@ void NotePad::closeEvent(QCloseEvent *event)
 
 bool NotePad::maybeSave()
 {
-    if (textEdit->document()->isModified()) {
+    if (textEdit->document()->isModified())
+    {
         QMessageBox::StandardButton ret;
         ret = QMessageBox::warning(this, "简单笔记",
                                  "文档已被修改。\n"
@@ -395,4 +465,105 @@ void NotePad::setCurrentFile(const QString &fileName)
 QString NotePad::strippedName(const QString &fullFileName)
 {
     return QFileInfo(fullFileName).fileName();
+}
+
+
+void NotePad::fontFamilyChanged(const QFont &font)
+{
+    QTextCursor cursor = textEdit->textCursor();
+    if (cursor.hasSelection()) {
+        QTextCharFormat format;
+        format.setFontFamily(font.family());
+        cursor.mergeCharFormat(format);
+    } else {
+        textEdit->setCurrentFont(font);
+    }
+}
+
+void NotePad::fontSizeChanged(const QString &size)
+{
+    bool ok;
+    int pointSize = size.toInt(&ok);
+    if (ok && pointSize > 0) {
+        QTextCursor cursor = textEdit->textCursor();
+        if (cursor.hasSelection()) {
+            QTextCharFormat format;
+            format.setFontPointSize(pointSize);
+            cursor.mergeCharFormat(format);
+        } else {
+            QFont currentFont = textEdit->currentFont();
+            currentFont.setPointSize(pointSize);
+            textEdit->setCurrentFont(currentFont);
+        }
+    }
+}
+
+void NotePad::boldClicked(bool checked)
+{
+    QTextCursor cursor = textEdit->textCursor();
+    QTextCharFormat format;
+    format.setFontWeight(checked ? QFont::Bold : QFont::Normal);
+    
+    if (cursor.hasSelection()) {
+        cursor.mergeCharFormat(format);
+    } else {
+        textEdit->mergeCurrentCharFormat(format);
+    }
+}
+
+void NotePad::italicClicked(bool checked)
+{
+    QTextCursor cursor = textEdit->textCursor();
+    QTextCharFormat format;
+    format.setFontItalic(checked);
+    
+    if (cursor.hasSelection()) {
+        cursor.mergeCharFormat(format);
+    } else {
+        textEdit->mergeCurrentCharFormat(format);
+    }
+}
+
+void NotePad::underlineClicked(bool checked)
+{
+    QTextCursor cursor = textEdit->textCursor();
+    QTextCharFormat format;
+    format.setFontUnderline(checked);
+    
+    if (cursor.hasSelection()) {
+        cursor.mergeCharFormat(format);
+    } else {
+        textEdit->mergeCurrentCharFormat(format);
+    }
+}
+
+void NotePad::textColorClicked()
+{
+    QColor color = QColorDialog::getColor(textEdit->textColor(), this);
+    if (color.isValid()) {
+        QTextCursor cursor = textEdit->textCursor();
+        QTextCharFormat format;
+        format.setForeground(color);
+        
+        if (cursor.hasSelection()) {
+            cursor.mergeCharFormat(format);
+        } else {
+            textEdit->mergeCurrentCharFormat(format);
+        }
+    }
+}
+
+void NotePad::updateFormatButtons()
+{
+    // 获取当前光标位置的格式
+    QTextCharFormat format = textEdit->currentCharFormat();
+    
+    // 更新按钮状态以反映当前格式
+    boldAction->setChecked(format.fontWeight() == QFont::Bold);
+    italicAction->setChecked(format.fontItalic());
+    underlineAction->setChecked(format.fontUnderline());
+    
+    // 更新字体和字号选择框
+    fontComboBox->setCurrentFont(format.font());
+    fontSizeComboBox->setCurrentText(QString::number(format.fontPointSize()));
 }

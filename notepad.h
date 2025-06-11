@@ -21,6 +21,8 @@
 #include <QTextCursor>
 #include <QApplication>
 #include <QClipboard>
+#include <QFontComboBox>    // 字体选择框
+#include <QComboBox>        // 普通下拉框
 
 class NotePad:public QMainWindow
 {
@@ -54,6 +56,14 @@ private slots:
     // 其他
     void documentModified();
     void updateStatusBar();
+
+    void fontFamilyChanged(const QFont &font);  // 字体改变
+    void fontSizeChanged(const QString &size);  // 字号改变
+    void boldClicked(bool checked);             // 加粗点击
+    void italicClicked(bool checked);           // 斜体点击
+    void underlineClicked(bool checked);        // 下划线点击
+    void textColorClicked();                    // 字体颜色点击
+    void updateFormatButtons();                 // 更新按钮状态
 private:
     void setupUI();
     void setupMenuBar();
@@ -108,6 +118,15 @@ private:
     // 文件相关
     QString currentFile;
     bool isUntitled;
+
+    // 新增：格式工具栏控件
+    QFontComboBox *fontComboBox;      // 字体选择框
+    QComboBox *fontSizeComboBox;      // 字号选择框
+    QAction *boldAction;              // 加粗按钮
+    QAction *italicAction;            // 斜体按钮
+    QAction *underlineAction;         // 下划线按钮
+    QAction *textColorAction;         // 字体颜色按钮
+    QToolBar *formatToolBar;          // 格式工具栏
 };
 
 

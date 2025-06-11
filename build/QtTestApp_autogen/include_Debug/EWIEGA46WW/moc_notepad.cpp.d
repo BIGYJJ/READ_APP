@@ -11,6 +11,7 @@ D:/read_app/build/QtTestApp_autogen/include_Debug/EWIEGA46WW/moc_notepad.cpp: D:
   C:/Qt/6.7.3/msvc2022_64/include/QtCore/q20memory.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtCore/q20type_traits.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtCore/q23utility.h \
+  C:/Qt/6.7.3/msvc2022_64/include/QtCore/qabstractitemmodel.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtCore/qalgorithms.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtCore/qanystringview.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtCore/qarraydata.h \
@@ -92,6 +93,7 @@ D:/read_app/build/QtTestApp_autogen/include_Debug/EWIEGA46WW/moc_notepad.cpp: D:
   C:/Qt/6.7.3/msvc2022_64/include/QtCore/qprocessordetection.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtCore/qrect.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtCore/qrefcount.h \
+  C:/Qt/6.7.3/msvc2022_64/include/QtCore/qregularexpression.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtCore/qscopedpointer.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtCore/qscopeguard.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtCore/qset.h \
@@ -156,6 +158,7 @@ D:/read_app/build/QtTestApp_autogen/include_Debug/EWIEGA46WW/moc_notepad.cpp: D:
   C:/Qt/6.7.3/msvc2022_64/include/QtGui/qevent.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtGui/qeventpoint.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtGui/qfont.h \
+  C:/Qt/6.7.3/msvc2022_64/include/QtGui/qfontdatabase.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtGui/qfontinfo.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtGui/qfontmetrics.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtGui/qguiapplication.h \
@@ -186,13 +189,16 @@ D:/read_app/build/QtTestApp_autogen/include_Debug/EWIEGA46WW/moc_notepad.cpp: D:
   C:/Qt/6.7.3/msvc2022_64/include/QtGui/qtguiexports.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtGui/qtguiglobal.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtGui/qtransform.h \
+  C:/Qt/6.7.3/msvc2022_64/include/QtGui/qvalidator.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtGui/qvector2d.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtGui/qvectornd.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/QApplication \
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/QColorDialog \
+  C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/QComboBox \
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/QFileDialog \
+  C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/QFontComboBox \
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/QFontDialog \
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/QLabel \
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/QMainWindow \
@@ -202,12 +208,17 @@ D:/read_app/build/QtTestApp_autogen/include_Debug/EWIEGA46WW/moc_notepad.cpp: D:
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/QStatusBar \
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/QTextEdit \
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/QToolBar \
+  C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qabstractitemdelegate.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qabstractscrollarea.h \
+  C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qabstractslider.h \
+  C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qabstractspinbox.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qapplication.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qcolordialog.h \
+  C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qcombobox.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qdialog.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qdialogbuttonbox.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qfiledialog.h \
+  C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qfontcombobox.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qfontdialog.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qframe.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qlabel.h \
@@ -215,8 +226,13 @@ D:/read_app/build/QtTestApp_autogen/include_Debug/EWIEGA46WW/moc_notepad.cpp: D:
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qmenu.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qmenubar.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qmessagebox.h \
+  C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qrubberband.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qsizepolicy.h \
+  C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qslider.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qstatusbar.h \
+  C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qstyle.h \
+  C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qstyleoption.h \
+  C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qtabbar.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qtabwidget.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qtextedit.h \
   C:/Qt/6.7.3/msvc2022_64/include/QtWidgets/qtoolbar.h \
