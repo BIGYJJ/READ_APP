@@ -23,6 +23,16 @@
 #include <QClipboard>
 #include <QFontComboBox>    // 字体选择框
 #include <QComboBox>        // 普通下拉框
+#include <QFileInfo>
+#include <QTextImageFormat>
+#include <QDebug>
+#include <QGraphicsDropShadowEffect>
+#include <QPropertyAnimation>
+#include <QHBoxLayout>
+#include <QPushButton>
+#include <QSyntaxHighlighter>
+#include <QRegularExpression>
+#include <QTimer>
 
 class NotePad:public QMainWindow
 {
@@ -64,6 +74,14 @@ private slots:
     void underlineClicked(bool checked);        // 下划线点击
     void textColorClicked();                    // 字体颜色点击
     void updateFormatButtons();                 // 更新按钮状态
+    void insertImage();                         // 插入图片
+
+     //工具栏切换槽函数
+    void showFileToolBar();
+    void showEditToolBar();
+    void showFormatToolBar();
+    void showInsertToolBar();
+    void showHelpToolBar();
 private:
     void setupUI();
     void setupMenuBar();
@@ -71,6 +89,16 @@ private:
     void setupStatusBar();
     void createConnections();
     
+    //创建不同的工具栏内容
+    void createFileToolBarContent();
+    void createEditToolBarContent();
+    void createFormatToolBarContent();
+    void createInsertToolBarContent();
+    void createHelpToolBarContent();
+    
+    //清空工具栏
+    void clearToolBar();
+
      bool maybeSave();
     void setCurrentFile(const QString &fileName);
     QString strippedName(const QString &fullFileName);
@@ -83,6 +111,7 @@ private:
     QMenu *editMenu;
     QMenu *formatMenu;
     QMenu *helpMenu;
+    QMenu *insertMenu; 
     
     // 文件菜单动作
     QAction *newAction;
@@ -105,10 +134,10 @@ private:
     
     // 帮助菜单动作
     QAction *aboutAction;
-    
+    // 插入图片动作
+    QAction *insertImageAction;      
     // 工具栏
-    QToolBar *fileToolBar;
-    QToolBar *editToolBar;
+    QToolBar *mainToolBar;
     
     // 状态栏
     QLabel *statusLabel;
@@ -119,14 +148,32 @@ private:
     QString currentFile;
     bool isUntitled;
 
-    // 新增：格式工具栏控件
+    // 格式工具栏控件
     QFontComboBox *fontComboBox;      // 字体选择框
     QComboBox *fontSizeComboBox;      // 字号选择框
     QAction *boldAction;              // 加粗按钮
     QAction *italicAction;            // 斜体按钮
     QAction *underlineAction;         // 下划线按钮
     QAction *textColorAction;         // 字体颜色按钮
-    QToolBar *formatToolBar;          // 格式工具栏
+    
+
+ // 新增：当前工具栏状态
+    enum ToolBarState {
+        FILE_TOOLBAR,
+        EDIT_TOOLBAR,
+        FORMAT_TOOLBAR,
+        INSERT_TOOLBAR,
+        HELP_TOOLBAR
+    };
+    ToolBarState currentToolBarState;
+
+    void applyModernStyle();
+    void setupCustomTitleBar();
+    bool eventFilter(QObject *obj, QEvent *event) override;
+    QPoint dragPosition;  // 记录拖动位置
+    bool isDragging = false;
+    void animateToolBarSwitch();
+    void updateToolBarContent();  // 实际更新工具栏内容的函数
 };
 
 

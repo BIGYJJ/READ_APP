@@ -62,7 +62,13 @@ constexpr auto qt_meta_stringdata_CLASSNotePadENDCLASS = QtMocHelpers::stringDat
     "italicClicked",
     "underlineClicked",
     "textColorClicked",
-    "updateFormatButtons"
+    "updateFormatButtons",
+    "insertImage",
+    "showFileToolBar",
+    "showEditToolBar",
+    "showFormatToolBar",
+    "showInsertToolBar",
+    "showHelpToolBar"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -75,7 +81,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSNotePadENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-      22,   14, // methods
+      28,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -83,28 +89,34 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSNotePadENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,  146,    2, 0x08,    1 /* Private */,
-       3,    0,  147,    2, 0x08,    2 /* Private */,
-       4,    0,  148,    2, 0x08,    3 /* Private */,
-       5,    0,  149,    2, 0x08,    4 /* Private */,
-       6,    0,  150,    2, 0x08,    5 /* Private */,
-       7,    0,  151,    2, 0x08,    6 /* Private */,
-       8,    0,  152,    2, 0x08,    7 /* Private */,
-       9,    0,  153,    2, 0x08,    8 /* Private */,
-      10,    0,  154,    2, 0x08,    9 /* Private */,
-      11,    0,  155,    2, 0x08,   10 /* Private */,
-      12,    0,  156,    2, 0x08,   11 /* Private */,
-      13,    0,  157,    2, 0x08,   12 /* Private */,
-      14,    0,  158,    2, 0x08,   13 /* Private */,
-      15,    0,  159,    2, 0x08,   14 /* Private */,
-      16,    0,  160,    2, 0x08,   15 /* Private */,
-      17,    1,  161,    2, 0x08,   16 /* Private */,
-      19,    1,  164,    2, 0x08,   18 /* Private */,
-      21,    1,  167,    2, 0x08,   20 /* Private */,
-      23,    1,  170,    2, 0x08,   22 /* Private */,
-      24,    1,  173,    2, 0x08,   24 /* Private */,
-      25,    0,  176,    2, 0x08,   26 /* Private */,
-      26,    0,  177,    2, 0x08,   27 /* Private */,
+       1,    0,  182,    2, 0x08,    1 /* Private */,
+       3,    0,  183,    2, 0x08,    2 /* Private */,
+       4,    0,  184,    2, 0x08,    3 /* Private */,
+       5,    0,  185,    2, 0x08,    4 /* Private */,
+       6,    0,  186,    2, 0x08,    5 /* Private */,
+       7,    0,  187,    2, 0x08,    6 /* Private */,
+       8,    0,  188,    2, 0x08,    7 /* Private */,
+       9,    0,  189,    2, 0x08,    8 /* Private */,
+      10,    0,  190,    2, 0x08,    9 /* Private */,
+      11,    0,  191,    2, 0x08,   10 /* Private */,
+      12,    0,  192,    2, 0x08,   11 /* Private */,
+      13,    0,  193,    2, 0x08,   12 /* Private */,
+      14,    0,  194,    2, 0x08,   13 /* Private */,
+      15,    0,  195,    2, 0x08,   14 /* Private */,
+      16,    0,  196,    2, 0x08,   15 /* Private */,
+      17,    1,  197,    2, 0x08,   16 /* Private */,
+      19,    1,  200,    2, 0x08,   18 /* Private */,
+      21,    1,  203,    2, 0x08,   20 /* Private */,
+      23,    1,  206,    2, 0x08,   22 /* Private */,
+      24,    1,  209,    2, 0x08,   24 /* Private */,
+      25,    0,  212,    2, 0x08,   26 /* Private */,
+      26,    0,  213,    2, 0x08,   27 /* Private */,
+      27,    0,  214,    2, 0x08,   28 /* Private */,
+      28,    0,  215,    2, 0x08,   29 /* Private */,
+      29,    0,  216,    2, 0x08,   30 /* Private */,
+      30,    0,  217,    2, 0x08,   31 /* Private */,
+      31,    0,  218,    2, 0x08,   32 /* Private */,
+      32,    0,  219,    2, 0x08,   33 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -127,6 +139,12 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSNotePadENDCLASS[] = {
     QMetaType::Void, QMetaType::Bool,   22,
     QMetaType::Void, QMetaType::Bool,   22,
     QMetaType::Void, QMetaType::Bool,   22,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -190,6 +208,18 @@ Q_CONSTINIT const QMetaObject NotePad::staticMetaObject = { {
         // method 'textColorClicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'updateFormatButtons'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'insertImage'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'showFileToolBar'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'showEditToolBar'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'showFormatToolBar'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'showInsertToolBar'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'showHelpToolBar'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -223,6 +253,12 @@ void NotePad::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 19: _t->underlineClicked((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
         case 20: _t->textColorClicked(); break;
         case 21: _t->updateFormatButtons(); break;
+        case 22: _t->insertImage(); break;
+        case 23: _t->showFileToolBar(); break;
+        case 24: _t->showEditToolBar(); break;
+        case 25: _t->showFormatToolBar(); break;
+        case 26: _t->showInsertToolBar(); break;
+        case 27: _t->showHelpToolBar(); break;
         default: ;
         }
     }
@@ -247,13 +283,13 @@ int NotePad::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 22)
+        if (_id < 28)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 22;
+        _id -= 28;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 22)
+        if (_id < 28)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 22;
+        _id -= 28;
     }
     return _id;
 }
