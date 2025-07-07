@@ -17,12 +17,12 @@ NotePad::NotePad(QWidget *parent)
 void NotePad::setupUI()
 {
     // 创建中央文本编辑器
-    textEdit = new QTextEdit(this);
+    textEdit = new CustomTextEdit(this);
     setCentralWidget(textEdit);
     
     // 设置文本编辑器属性
     textEdit->setFont(QFont("Consolas", 12));
-    textEdit->setLineWrapMode(QTextEdit::WidgetWidth);
+    textEdit->setLineWrapMode(CustomTextEdit::WidgetWidth);
     
     // 设置窗口属性
     setMinimumSize(800, 600);
@@ -220,8 +220,8 @@ void NotePad::createConnections()
     connect(insertImageAction, &QAction::triggered, this, &NotePad::insertImage);
     
     // 文本编辑器连接
-    connect(textEdit, &QTextEdit::textChanged, this, &NotePad::documentModified);
-    connect(textEdit, &QTextEdit::cursorPositionChanged, this, &NotePad::updateStatusBar);
+    connect(textEdit, &CustomTextEdit::textChanged, this, &NotePad::documentModified);
+    connect(textEdit, &CustomTextEdit::cursorPositionChanged, this, &NotePad::updateStatusBar);
     
     // 剪贴板连接
     connect(QApplication::clipboard(), &QClipboard::dataChanged, 
@@ -240,7 +240,7 @@ void NotePad::createConnections()
     connect(textColorAction, &QAction::triggered, this, &NotePad::textColorClicked);
     
     // 当光标移动时更新格式按钮状态
-    connect(textEdit, &QTextEdit::cursorPositionChanged, 
+    connect(textEdit, &CustomTextEdit::cursorPositionChanged, 
             this, &NotePad::updateFormatButtons);
 
     // 新增：菜单点击时切换工具栏

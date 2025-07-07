@@ -50,7 +50,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "QtTestApp::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-QtTestApp-Debug-cd0650a225c2b0ee3284.json",
+					"jsonFile" : "target-QtTestApp-Debug-4ea78bc3087a5bb1b888.json",
 					"name" : "QtTestApp",
 					"projectIndex" : 0
 				},
@@ -112,7 +112,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "QtTestApp::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-QtTestApp-Release-74fc82a041a76bc909e4.json",
+					"jsonFile" : "target-QtTestApp-Release-696567eabc4320be1a37.json",
 					"name" : "QtTestApp",
 					"projectIndex" : 0
 				},
@@ -174,7 +174,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "QtTestApp::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-QtTestApp-MinSizeRel-57256a7dd047eae75978.json",
+					"jsonFile" : "target-QtTestApp-MinSizeRel-220d8da62d7fdf539640.json",
 					"name" : "QtTestApp",
 					"projectIndex" : 0
 				},
@@ -236,7 +236,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "QtTestApp::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-QtTestApp-RelWithDebInfo-abac013f791d914b0441.json",
+					"jsonFile" : "target-QtTestApp-RelWithDebInfo-ab787d7ed6e48f369dec.json",
 					"name" : "QtTestApp",
 					"projectIndex" : 0
 				},

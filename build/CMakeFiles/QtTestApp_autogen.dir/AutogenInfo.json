@@ -255,6 +255,12 @@
 	"DEP_FILE_RULE_NAME" : "",
 	"HEADERS" : 
 	[
+		[
+			"D:/read_app/customtextedit.h",
+			"MU",
+			"EWIEGA46WW/moc_customtextedit.cpp",
+			null
+		],
 		[ "D:/read_app/notepad.h", "MU", "EWIEGA46WW/moc_notepad.cpp", null ]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -393,6 +399,7 @@
 	"SETTINGS_FILE_Release" : "D:/read_app/build/CMakeFiles/QtTestApp_autogen.dir/AutogenUsed_Release.txt",
 	"SOURCES" : 
 	[
+		[ "D:/read_app/customtextedit.cpp", "MU", null ],
 		[ "D:/read_app/main.cpp", "MU", null ],
 		[ "D:/read_app/notepad.cpp", "MU", null ]
 	],

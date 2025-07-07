@@ -16,10 +16,12 @@ set(CMAKE_AUTORCC ON)
 set(SOURCES
     main.cpp
     notepad.cpp
+    customtextedit.cpp
 )
 
 set(HEADERS
     notepad.h
+    customtextedit.h
 )
 
 # 创建可执行文件

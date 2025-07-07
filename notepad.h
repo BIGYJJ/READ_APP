@@ -33,6 +33,7 @@
 #include <QSyntaxHighlighter>
 #include <QRegularExpression>
 #include <QTimer>
+#include "customtextedit.h"
 
 class NotePad:public QMainWindow
 {
@@ -104,7 +105,7 @@ private:
     QString strippedName(const QString &fullFileName);
     
     // UI组件
-    QTextEdit *textEdit;
+    CustomTextEdit *textEdit;
     
     // 菜单
     QMenu *fileMenu;

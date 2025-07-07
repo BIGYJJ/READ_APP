@@ -411,7 +411,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ClCompile Include="D:\read_app\main.cpp" />
     <ClCompile Include="D:\read_app\notepad.cpp" />
+    <ClCompile Include="D:\read_app\customtextedit.cpp" />
     <ClInclude Include="D:\read_app\notepad.h" />
+    <ClInclude Include="D:\read_app\customtextedit.h" />
     <ClCompile Include="D:\read_app\build\QtTestApp_autogen\mocs_compilation_Release.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</ExcludedFromBuild>

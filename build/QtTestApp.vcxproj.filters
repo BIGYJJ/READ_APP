@@ -10,6 +10,9 @@
     <ClCompile Include="D:\read_app\notepad.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\read_app\customtextedit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="D:\read_app\build\QtTestApp_autogen\mocs_compilation_Release.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -22,6 +25,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="D:\read_app\notepad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\read_app\customtextedit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
